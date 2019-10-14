@@ -329,7 +329,6 @@
 
         render: function (items) {
             var that = this;
-            var self = this;
             var activeFound = false;
             var data = [];
             var _category = that.options.separator;
@@ -342,7 +341,7 @@
                     });
                 }
 
-                if (this.showCategoryHeader) {
+                if (that.showCategoryHeader) {
                     // inject category header
                     if (value[_category] && (key === 0 || value[_category] !== items[key - 1][_category])) {
                         data.push({
@@ -364,18 +363,18 @@
                         return $(that.options.headerDivider || that.theme.headerDivider)[0];
                     }
 
-                    var text = self.displayText(item);
+                    var text = that.displayText(item);
                     i = $(that.options.item || that.theme.item).data('value', item);
                     i.find(that.options.itemContentSelector || that.theme.itemContentSelector)
                         .addBack(that.options.itemContentSelector || that.theme.itemContentSelector)
                         .html(that.highlighter(text, item));
                     if(that.options.followLinkOnSelect) {
-                        i.find('a').attr('href', self.itemLink(item));
+                        i.find('a').attr('href', that.itemLink(item));
                     }
-                    i.find('a').attr('title', self.itemTitle(item));
-                    if (text == self.$element.val()) {
+                    i.find('a').attr('title', that.itemTitle(item));
+                    if (text == that.$element.val()) {
                         i.addClass('active');
-                        self.$element.data('active', item);
+                        that.$element.data('active', item);
                         activeFound = true;
                     }
                     return i[0];

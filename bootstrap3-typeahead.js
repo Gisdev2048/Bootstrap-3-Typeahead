@@ -1,5 +1,5 @@
 /* =============================================================
- * bootstrap3-typeahead.js v4.0.2
+ * bootstrap3-typeahead.js v4.0.3
  * https://github.com/bassjobsen/Bootstrap-3-Typeahead
  * =============================================================
  * Original written by @mdo and @fat
@@ -59,7 +59,7 @@
         this.displayText = this.options.displayText || this.displayText;
         this.itemLink = this.options.itemLink || this.itemLink;
         this.itemTitle = this.options.itemTitle || this.itemTitle;
-        this.followLinkOnSelect = this.options.followLinkOnSelect || this.followLinkOnSelect;
+        this.followLinkOnSelect = this.options.followLinkOnSelect;
         this.source = this.options.source;
         this.delay = this.options.delay;
         this.theme = this.options.theme && this.options.themes && this.options.themes[this.options.theme] || Typeahead.defaults.themes[Typeahead.defaults.theme];
@@ -75,11 +75,11 @@
         this.value = this.$element.val() || this.$element.text();
         this.keyPressed = false;
         this.focused = this.$element.is(':focus');
-        this.changeInputOnSelect = this.options.changeInputOnSelect || this.changeInputOnSelect;
-        this.changeInputOnMove = this.options.changeInputOnMove || this.changeInputOnMove;
-        this.openLinkInNewTab = this.options.openLinkInNewTab || this.openLinkInNewTab;
-        this.selectOnBlur = this.options.selectOnBlur || this.selectOnBlur;
-        this.showCategoryHeader = this.options.showCategoryHeader || this.showCategoryHeader;
+        this.changeInputOnSelect = this.options.changeInputOnSelect;
+        this.changeInputOnMove = this.options.changeInputOnMove;
+        this.openLinkInNewTab = this.options.openLinkInNewTab;
+        this.selectOnBlur = this.options.selectOnBlur;
+        this.showCategoryHeader = this.options.showCategoryHeader;
     };
 
     Typeahead.prototype = {
